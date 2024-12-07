@@ -1,6 +1,7 @@
 #ifndef SWAY_LOADER_WAV_WAVPLUGIN_HPP
 #define SWAY_LOADER_WAV_WAVPLUGIN_HPP
 
+#include <sway/loader/_typedefs.hpp>
 #include <sway/loader/wav/_prerequisites.hpp>
 
 NS_BEGIN_SWAY()
@@ -24,6 +25,8 @@ public:
   MTHD_OVERRIDE(auto getBody() const -> std::string);
 
 #pragma endregion
+
+  auto readSamples(f32_t *output, std::size_t samples) -> std::size_t;
 
   auto read(void *output, std::size_t bytes) -> std::size_t;
 

@@ -3,6 +3,8 @@
 #define DR_WAV_IMPLEMENTATION
 #include <dr_wav.h>
 
+#define ALIGN(x, a) ((x & ~(a - 1)) + a)
+
 NS_BEGIN(sway)
 NS_BEGIN(loader)
 NS_BEGIN(wav)
@@ -32,16 +34,20 @@ auto WAVPlugin::loadFrom(void *data, i32_t size) -> AudioDescriptor {
   }
 
   AudioDescriptor desc;
-  desc.frequency = decoder_.sampleRate;
-  desc.numChannels = decoder_.channels;
-  desc.samples = decoder_.totalPCMFrameCount;
-  // desc.buffer.data = decoder_.pCMData;
-  desc.buffer.len = decoder_.totalPCMFrameCount * decoder_.channels;
+  desc.channels = decoder_.channels;
+  desc.rate = decoder_.sampleRate;
+
+  desc.samples.resize(ALIGN(decoder_.totalPCMFrameCount, 4));
+  desc.samples.resize(ALIGN(readSamples(desc.samples.data(), desc.samples.size()), 4));
 
   return desc;
 }
 
 auto WAVPlugin::getBody() const -> std::string {}
+
+auto WAVPlugin::readSamples(f32_t *output, std::size_t samples) -> std::size_t {
+  return drwav_read_pcm_frames_f32(&decoder_, samples / decoder_.channels, output) * decoder_.channels;
+}
 
 auto WAVPlugin::read(void *output, std::size_t bytes) -> std::size_t {
   auto available = filedata_.size() - inputpos_;

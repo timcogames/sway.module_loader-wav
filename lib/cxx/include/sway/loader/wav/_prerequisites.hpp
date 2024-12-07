@@ -5,8 +5,10 @@
 #include <sway/loader.hpp>
 #include <sway/math.hpp>
 
-#include <dr_wav.h>
 #include <iostream>
 #include <memory>
+
+// WAV file format
+#include <dr_wav.h>
 
 #endif  // SWAY_LOADER_WAV_PREREQS_HPP
