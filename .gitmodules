@@ -1,0 +1,9 @@
+[submodule "submodules/sway.module_core"]
+	path = submodules/sway.module_core
+	url = https://github.com/timcogames/sway.module_core.git
+[submodule "submodules/sway.module_math"]
+	path = submodules/sway.module_math
+	url = https://github.com/timcogames/sway.module_math.git
+[submodule "submodules/sway.module_loader"]
+	path = submodules/sway.module_loader
+	url = https://github.com/timcogames/sway.module_loader.git

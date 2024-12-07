@@ -1,0 +1,15 @@
+{
+  "configurations": [
+    {
+      "name": "Mac",
+      "includePath": [
+        "${workspaceFolder}/lib/cxx/include",
+        "${workspaceFolder}/submodules/sway.module_loader/api/cxx/include",
+        "${workspaceFolder}/submodules/sway.module_core/lib/cxx/include",
+        "${workspaceFolder}/submodules/sway.module_math/lib/cxx/include",
+        "/Users/apriori85/Documents/Third-party/googletest/googletest/include"
+      ]
+    }
+  ],
+  "version": 4
+}
