@@ -5,6 +5,7 @@ ctest --preset default-test-macos
 
 # deprecated
 cmake -D CMAKE_BUILD_TYPE=Debug \
+      -D GLOB_THIRD_PARTY_DIR=/Users/<USER_NAME>/Documents/Third-party \
       -D GLOB_EMSCRIPTEN_ROOT_DIR= \
       -D GLOB_EMSCRIPTEN_PLATFORM=OFF \
       -D GLOB_GTEST_ROOT_DIR=/Users/<USER_NAME>/Documents/Third-party/googletest/googletest \
@@ -20,7 +21,6 @@ cmake -D CMAKE_BUILD_TYPE=Debug \
       -D MODULE_LOADER_WAV_MT=ON \
       -D MODULE_LOADER_WAV_ENABLE_TESTS=ON \
       -D MODULE_LOADER_WAV_ENABLE_COVERAGE=OFF \
-      -D MODULE_LOADER_WAV_ENABLE_EXAMPLES=OFF \
       ../
 ```
 

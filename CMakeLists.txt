@@ -95,15 +95,17 @@ message("[${MODULE_LOADER_WAV_PROJ_NAME}]: ${MODULE_LOADER_WAV_VERSION}
 
 set_output_dir(${MODULE_LOADER_WAV_BIN_DIR})
 
-set(GLUT_INCLUDE_DIRS "/opt/X11/include")
-set(GLUT_LIBRARY_DIRS "/opt/X11/lib")
-
+#---------------------------------------------------------------------------------
 # Добавляем пути для поиска хедеров
-include_directories("${GLUT_INCLUDE_DIRS}")
+#---------------------------------------------------------------------------------
+
+# wav, mp3, flac
+include_directories("${GLOB_THIRD_PARTY_DIR}/dr_libs")
+
 # include_directories("/Library/Developer/CommandLineTools/usr/include/c++/v1")
-if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
-  include_directories("/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include")
-endif()
+# if(${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+#   include_directories("/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include")
+# endif()
 include_directories("${MODULE_LOADER_WAV_LIST_DIR}/lib/cxx/include")
 include_directories("${MODULE_LOADER_WAV_LIST_DIR}/submodules/sway.module_loader/api/cxx/include")
 include_directories("${MODULE_LOADER_WAV_LIST_DIR}/submodules/sway.module_core/lib/cxx/include")

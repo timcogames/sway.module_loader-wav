@@ -1,5 +1,10 @@
 # sway.module_loader-wav
 
+#### Thirdparty
+
+https://github.com/mackron/dr_libs
+https://github.com/lieff/minimp3
+
 #### Конфигурируем проект для Google тестов
 
 ```console

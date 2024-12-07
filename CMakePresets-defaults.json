@@ -7,6 +7,10 @@
       "binaryDir": "build",
       "generator": "Unix Makefiles",
       "cacheVariables": {
+        "GLOB_THIRD_PARTY_DIR": {
+          "type": "FILEPATH",
+          "value": "/Users/apriori85/Documents/Third-party"
+        },
         "GLOB_EMSCRIPTEN_ROOT_DIR": {
           "type": "FILEPATH",
           "value": "/Users/apriori85/Documents/Third-party/emsdk/upstream/emscripten"

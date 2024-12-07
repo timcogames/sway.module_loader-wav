@@ -5,4 +5,7 @@
 
 using namespace sway;
 
-TEST(Plug, info) { auto *plug = new loader::wav::WAVPlugin(); }
+TEST(Plug, info) {
+  auto *plug = new loader::wav::WAVPlugin();
+  plug->loadFrom(nullptr, 0);
+}
